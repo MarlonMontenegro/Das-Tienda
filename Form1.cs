@@ -35,7 +35,7 @@ namespace Das_Tienda
             string Telefono = TbTelefonoCli.Text;
             int NumeroTel;
 
-            // Validaciones de entrada
+            // Validaciones
             if (!validator.EsTextoValido(Nombre))
             {
                 MessageBox.Show("El campo Nombre no debe estar vacío.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,7 +80,7 @@ namespace Das_Tienda
         }
         private void ActualizarListBox()
         {
-            ListBClientes.Items.Clear(); // Limpiar el ListBox antes de agregar los elementos
+            ListBClientes.Items.Clear();
 
             // Recorrer la lista de clientes y agregarlos al ListBox
             foreach (var cliente in gestorCli.ListadoClientes)
@@ -88,6 +88,7 @@ namespace Das_Tienda
                 ListBClientes.Items.Add($"ID: {cliente.Id} - Nombre: {cliente.Nombre} - Tel: {cliente.Telefono} - Direccion {cliente.Direccion}");
             }
         }
+
         private void BtnAddProduct_Click(object sender, EventArgs e)
         {
             string NombreProd = tbNombreProd.Text;
@@ -99,7 +100,7 @@ namespace Das_Tienda
             decimal PrecioVerificado;
             int StockVerificado;
 
-            // Validaciones de entrada
+            // Validaciones
 
             if (!validator.EsTextoValido(NombreProd))
             {
@@ -157,7 +158,6 @@ namespace Das_Tienda
         }
         public void CargarInventarioEnListBox(ListBox listBox)
         {
-            // Limpiar el ListBox antes de cargar nuevos datos
             listBox.Items.Clear();
 
             // Obtener los productos como lista de cadenas
@@ -218,7 +218,6 @@ namespace Das_Tienda
             CantidadLabel.Visible = true;
             tbCantidadVenta.Visible = true;
             btnAgregar.Visible = true;
-
 
             string seleccion = listBoxProductosVenta.SelectedItem.ToString().ToLower();
             ProductoSeleccionado.Text = $"Producto Selecinado: {seleccion}";

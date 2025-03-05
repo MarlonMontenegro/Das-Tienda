@@ -115,7 +115,7 @@ namespace Das_Tienda.Servicios
                 case "Bebidas":
                     return 1;
 
-                case "Electricidad":
+                case "Electronica":
                     return 2;
 
                 case "Accesorios":
