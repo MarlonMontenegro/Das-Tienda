@@ -10,8 +10,7 @@ namespace Das_Tienda.Servicios
     class GestorVenta
     {
 
-        private Dictionary<int, Venta> Ventas;
-
+        public Dictionary<int, Venta> Ventas;
 
         public GestorVenta()
         {
@@ -25,6 +24,22 @@ namespace Das_Tienda.Servicios
         }
 
 
+        public void EliminarVenta(int id)
+        {
+            Ventas.Remove(id);
+        }
+
+        public Venta BuscarVentaPorId(int id)
+        {
+            if (Ventas.ContainsKey(id))
+            {
+                return Ventas[id];
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
     }

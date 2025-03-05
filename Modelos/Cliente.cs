@@ -11,9 +11,9 @@ namespace Das_Tienda.Models
 
         private static int contadorId = 0;
         public int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Direccion {  get; set; }
-        private int Telefono { get; set; }
+        public string Nombre { get; set; }
+        public string Direccion {  get; set; }
+        public int Telefono { get; set; }
 
 
         public Cliente (string nombre, string direccion, int telefono) 

@@ -9,10 +9,14 @@ namespace Das_Tienda.Models
     class Venta
     {
        private static int contadorId = 0;
-       private int ID { get; }
+       public int ID { get; }
 
-       private Cliente cliente;
-       private List<Producto> productos;
+       public Cliente cliente;
+
+       public int Cantidad;
+
+       public List<Producto> productos;
+
         public List<Producto> Productos
         {
             get { return productos; }
@@ -31,16 +35,15 @@ namespace Das_Tienda.Models
             productos.Add(producto);
         }
 
-
         public decimal Total()
         {
             decimal total = 0;
-
             foreach (Producto producto in productos)
             {
-                total += producto.Valor;
+                total += producto.Precio * producto.Cantidad;
             }
             return total;
         }
+
     }
 }

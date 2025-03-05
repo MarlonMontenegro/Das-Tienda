@@ -10,7 +10,7 @@ namespace Das_Tienda.Servicios
     class GestorClientes
     {
 
-        List<Cliente> ListadoClientes;
+        public List<Cliente> ListadoClientes;
 
         public GestorClientes()
         {
@@ -27,6 +27,14 @@ namespace Das_Tienda.Servicios
         {
             ListadoClientes.Remove(cliente);
         }
+
+        public Cliente BuscarClientePorNombre(string nombre)
+        {
+            Cliente clienteEncontrado = ListadoClientes.FirstOrDefault(c => c.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+
+            return clienteEncontrado;
+        }
+
 
 
     }
